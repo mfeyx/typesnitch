@@ -1,6 +1,6 @@
 # Type Snitch: A Simple Type Sniffer for JS
 
-Have you ever wondered why `typeof []` returns `'object'`? I did, and that is why I started the development of `typesnitch`. Now the `snitch.type([])` will return `'Array'` – isn't that something? Basically, all standard JS prototypes are supported and returned as a `string` value. Furthermore, the `Number` prototype is more differentiated (see examples below).
+Have you ever wondered why `typeof []` returns `'object'`? I did, and that is why I started the development of `typesnitch`. Now `snitch.type([])` will return `'Array'` – isn't that something? Basically, all standard JS prototypes are supported and returned as a `string` value. Furthermore, the `Number` prototype is more differentiated (see examples below).
 
 If you find any bugs or have suggestions feel free to help and fork the package.
 
@@ -29,6 +29,20 @@ snitch.type(x) // 'String'
 // trying to convert the input with unveil
 const y = snitch.unveil(x)
 snitch.type(y) // 'Array'
+```
+
+You can use `typesnitch` for type checking:
+```js
+const { type, unveil } = require('typesnitch')
+
+const x = [1,2,3]
+const y = '[1,2,3]'
+
+// false
+type(x) === type(y)
+
+// true
+type(x) === type(unveil(y))
 ```
 
 ### More Examples
