@@ -7,8 +7,8 @@ If you find any bugs or have suggestions feel free to help and fork the package.
 ## Methods
 
 At the moment `typesnitch` has two main methods:
-- type: Returns the prototype of the value.
-- unveal: Tries to convert the value, or 'unveal' it, e.g., numbers in disguise :)
+- `type`: Returns the prototype of the value.
+- `unveal`: Tries to convert the value, or 'unveal' it, e.g., numbers in disguise :)
 
 You can use `type()` to get the `prototype` of a given input value. The method has a second parameter that can be used to get a more detailed prototype. The `detailed` parameter is set to `true` per default.
 
