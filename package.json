@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/mfeyx/typesnitch.git"
   },
-  "keywords": ["type sniffer", "type detector", "type detection"],
+  "keywords": [
+    "type sniffer",
+    "type detector",
+    "type detection"
+  ],
   "author": "Markus Feiks",
   "license": "MIT",
   "bugs": {

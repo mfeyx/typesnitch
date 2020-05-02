@@ -1,4 +1,4 @@
-const { prototype } = require('./prototype')
+const { getPrototype: prototype } = require('./types')
 const { DIGITS } = require('./constants')
 
 /**
@@ -11,6 +11,7 @@ const { DIGITS } = require('./constants')
 function isInteger (obj) {
   return prototype(obj) === 'Number' && !obj.toString().includes('.')
 }
+
 /**
  * Checks if an object is like an integer
  * @since 0.0.1
