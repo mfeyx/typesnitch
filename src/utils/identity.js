@@ -1,4 +1,4 @@
-const { getPrototype: prototype } = require('./types')
+const { getPrototype: prototype } = require('./proto')
 const { DIGITS } = require('./constants')
 
 /**

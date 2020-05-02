@@ -20,13 +20,11 @@ function getPrototype (obj) {
  * @return {String}
  */
 function getConstructorString (obj) {
-  if (!obj.constructor) { return '' }
-
+  if (!obj) { return '' }
   return obj.constructor
     .toString()
     .replace(/(\s{.*})|(function )|\(\)/g, '')
     // .toLowerCase()
-
 }
 
 module.exports = {
