@@ -3,12 +3,11 @@
  * @since 0.0.1
  * @memberof module:typesnitch/utils
  * @param {*} any
- * @return {String}
+ * @return {string}
  */
 function getPrototype (obj) {
   return Object.prototype.toString.call(obj)
-  // .slice(8, -1)
-  // .toLowerCase()
+  .slice(8, -1)
 }
 
 /**
@@ -23,13 +22,13 @@ function getConstructorString (obj) {
   return obj.constructor
     .toString()
     .replace(/(\s{.*})|(function )|\(\)/g, '')
-    // .toLowerCase()
 }
 
 /**
  *
  * @param {*} obj Any Object or Value
- * @param {String} type
+ * @param {string} type
+ * @return {boolean}
  */
 function isType(obj, type) {
   return getPrototype(obj)
@@ -39,5 +38,6 @@ function isType(obj, type) {
 
 module.exports = {
   getConstructorString,
-  getPrototype
+  getPrototype,
+  isType
 }

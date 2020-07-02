@@ -1,26 +1,26 @@
-const { getPrototype: prototype } = require('./proto')
+const { getPrototype } = require('./proto')
 const { DIGITS } = require('./constants')
 
 /**
  * Checks if an object is an integer
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isInteger (obj) {
-  return prototype(obj) === 'Number' && !obj.toString().includes('.')
+  return getPrototype(obj) === 'Number' && !obj.toString().includes('.')
 }
 
 /**
  * Checks if an object is like an integer
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {String} str
- * @return {Boolean} true or false
+ * @param {string} str
+ * @return {boolean} true or false
  */
 function isIntegerLike (str) {
-  if (prototype(str) !== 'String') return false
+  if (getPrototype(str) !== 'String') return false
   const obj = str
     .split('')
     .filter(c => DIGITS.includes(c))
@@ -32,74 +32,74 @@ function isIntegerLike (str) {
  * Checks if an object is a string
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isString (obj) {
-  return prototype(obj) === 'String'
+  return getPrototype(obj) === 'String'
 }
 
 /**
  * Checks if an object is a Float
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isFloat (obj) {
-  return prototype(obj) === 'Number' && obj.toString().includes('.')
+  return getPrototype(obj) === 'Number' && obj.toString().includes('.')
 }
 
 /**
- * Checks if an object is an Object
+ * Checks if an object is an object
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isObject (obj) {
-  return prototype(obj) === 'Object'
+  return getPrototype(obj) === 'object'
 }
 
 /**
  * Checks if an object is Undefined
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isUndefined(obj) {
-  return prototype(obj) === 'Undefined'
+  return getPrototype(obj) === 'Undefined'
 }
 
 /**
  * Checks if an object is Null
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isNull(obj) {
-  return prototype(obj) === 'Null'
+  return getPrototype(obj) === 'Null'
 }
 
 /**
  * Checks if an object is an Array
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isArray (obj) {
-  return prototype(obj) === 'Array'
+  return getPrototype(obj) === 'Array'
 }
 
 /**
  * Checks if an object is like an Array (stringified array)
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Object} obj
- * @return {Boolean} true or false
+ * @param {object} obj
+ * @return {boolean} true or false
  */
 function isArrayLike (obj) {
   obj = obj.toString().trim()
@@ -114,8 +114,8 @@ const baseIsMatrix = matrix => Array.from(new Set(matrix.map(getRowLength))).len
  * Checks if an object is a 2D-Array (n x m)
  * @since 0.0.1
  * @memberof module:typesnitch/detect
- * @param {Array} matrix - 2D-Array
- * @returns {Boolean}
+ * @param {array} matrix - 2D-Array
+ * @returns {boolean}
  */
 function isMatrix (matrix) {
   return isArray(matrix) && baseIsMatrix(matrix)
