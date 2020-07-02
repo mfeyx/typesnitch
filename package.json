@@ -4,8 +4,12 @@
   "description": "A Simple Type Sniffer for JS",
   "main": "src/snitch.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pretty": "npx prettier --write src/"
+    "test": "jest",
+    "test:silent": "npm test -- --silent --noStackTrace",
+    "watch": "jest --watch --verbose",
+    "watchall": "jest --watchAll",
+    "pretty": "npx prettier --write src/",
+    "build": "npm test"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,7 @@
   "homepage": "https://github.com/mfeyx/typesnitch#readme",
   "devDependencies": {
     "husky": "^4.2.5",
+    "jest": "^26.1.0",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1"
   },

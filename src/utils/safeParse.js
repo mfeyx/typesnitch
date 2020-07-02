@@ -1,7 +1,7 @@
 module.exports = function safeParse(value) {
   try {
-    return JSON.parse(value.trim());
+    return JSON.parse(value.trim())
   } catch (error) {
-    return value;
+    return value
   }
-};
+}
