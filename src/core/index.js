@@ -1,6 +1,6 @@
-const utils = require('../utils')
-const { typeofNumber, safeParse } = utils
-const { getPrototype } = utils.proto
+const utils = require("../utils");
+const { typeofNumber, safeParse } = utils;
+const { getPrototype } = utils.proto;
 
 /**
  * Reveals the Prototype of an input value
@@ -8,12 +8,12 @@ const { getPrototype } = utils.proto
  * @param {boolean} detailed If true detailed Prototype for Numbers will be revealed
  * @returns {string}
  */
-function type (value, detailed=true) {
-  let prototype = getPrototype(value)
-  if (detailed && prototype === 'Number') {
-    prototype = typeofNumber(value)
+function type(value, detailed = true) {
+  let prototype = getPrototype(value);
+  if (detailed && prototype === "Number") {
+    prototype = typeofNumber(value);
   }
-  return prototype
+  return prototype;
 }
 
 /**
@@ -22,8 +22,8 @@ function type (value, detailed=true) {
  * @param {number|number[]|string[]} value Any value to unveil
  * @returns {*} parsed Value
  */
-function unveil (value) {
-  return safeParse(value)
+function unveil(value) {
+  return safeParse(value);
 }
 
 /**
@@ -32,12 +32,12 @@ function unveil (value) {
  * @param {*} value Any value to unveil
  * @returns {string}
  */
-function unveilType (value) {
-  return type(unveil(value))
+function unveilType(value) {
+  return type(unveil(value));
 }
 
 module.exports = {
   type,
   unveil,
   unveilType
-}
+};

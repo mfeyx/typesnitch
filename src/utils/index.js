@@ -1,9 +1,9 @@
-const proto = require('./proto')
-const constants = require('./constants')
-const identity = require('./identity')
-const typeofNumber = require('./typeofNumber')
-const unveilObject = require('./unveilObject')
-const safeParse = require('./safeParse')
+const proto = require("./proto");
+const constants = require("./constants");
+const identity = require("./identity");
+const typeofNumber = require("./typeofNumber");
+const unveilObject = require("./unveilObject");
+const safeParse = require("./safeParse");
 
 module.exports = {
   constants,
@@ -12,4 +12,4 @@ module.exports = {
   safeParse,
   typeofNumber,
   unveilObject
-}
+};

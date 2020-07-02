@@ -1,5 +1,5 @@
-const { type, unveil, unveilType } = require('../src/core')
-const { safeParse, proto } = require('../src/utils')
+const { type, unveil, unveilType } = require("../src/core");
+const { safeParse, proto } = require("../src/utils");
 
 // API
 const snitch = {
@@ -10,6 +10,6 @@ const snitch = {
     proto,
     safeParse
   }
-}
+};
 
-module.exports = snitch
+module.exports = snitch;

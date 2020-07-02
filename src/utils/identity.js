@@ -1,5 +1,5 @@
-const { getPrototype } = require('./proto')
-const { DIGITS } = require('./constants')
+const { getPrototype } = require("./proto");
+const { DIGITS } = require("./constants");
 
 /**
  * Checks if an object is an integer
@@ -8,8 +8,8 @@ const { DIGITS } = require('./constants')
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isInteger (obj) {
-  return getPrototype(obj) === 'Number' && !obj.toString().includes('.')
+function isInteger(obj) {
+  return getPrototype(obj) === "Number" && !obj.toString().includes(".");
 }
 
 /**
@@ -19,13 +19,13 @@ function isInteger (obj) {
  * @param {string} str
  * @return {boolean} true or false
  */
-function isIntegerLike (str) {
-  if (getPrototype(str) !== 'String') return false
+function isIntegerLike(str) {
+  if (getPrototype(str) !== "String") return false;
   const obj = str
-    .split('')
+    .split("")
     .filter(c => DIGITS.includes(c))
-    .join('')
-  return obj.length === str.length
+    .join("");
+  return obj.length === str.length;
 }
 
 /**
@@ -35,8 +35,8 @@ function isIntegerLike (str) {
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isString (obj) {
-  return getPrototype(obj) === 'String'
+function isString(obj) {
+  return getPrototype(obj) === "String";
 }
 
 /**
@@ -46,8 +46,8 @@ function isString (obj) {
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isFloat (obj) {
-  return getPrototype(obj) === 'Number' && obj.toString().includes('.')
+function isFloat(obj) {
+  return getPrototype(obj) === "Number" && obj.toString().includes(".");
 }
 
 /**
@@ -57,8 +57,8 @@ function isFloat (obj) {
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isObject (obj) {
-  return getPrototype(obj) === 'object'
+function isObject(obj) {
+  return getPrototype(obj) === "object";
 }
 
 /**
@@ -69,7 +69,7 @@ function isObject (obj) {
  * @return {boolean} true or false
  */
 function isUndefined(obj) {
-  return getPrototype(obj) === 'Undefined'
+  return getPrototype(obj) === "Undefined";
 }
 
 /**
@@ -80,7 +80,7 @@ function isUndefined(obj) {
  * @return {boolean} true or false
  */
 function isNull(obj) {
-  return getPrototype(obj) === 'Null'
+  return getPrototype(obj) === "Null";
 }
 
 /**
@@ -90,8 +90,8 @@ function isNull(obj) {
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isArray (obj) {
-  return getPrototype(obj) === 'Array'
+function isArray(obj) {
+  return getPrototype(obj) === "Array";
 }
 
 /**
@@ -101,14 +101,14 @@ function isArray (obj) {
  * @param {object} obj
  * @return {boolean} true or false
  */
-function isArrayLike (obj) {
-  obj = obj.toString().trim()
-  return obj.startsWith('[') && obj.endsWith(']')
+function isArrayLike(obj) {
+  obj = obj.toString().trim();
+  return obj.startsWith("[") && obj.endsWith("]");
 }
 
 // helper functions
-const getRowLength = row => isArray(row) ? row.length : isUndefined(row) ? 0 : 1
-const baseIsMatrix = matrix => Array.from(new Set(matrix.map(getRowLength))).length === 1
+const getRowLength = row => (isArray(row) ? row.length : isUndefined(row) ? 0 : 1);
+const baseIsMatrix = matrix => Array.from(new Set(matrix.map(getRowLength))).length === 1;
 
 /**
  * Checks if an object is a 2D-Array (n x m)
@@ -117,8 +117,8 @@ const baseIsMatrix = matrix => Array.from(new Set(matrix.map(getRowLength))).len
  * @param {array} matrix - 2D-Array
  * @returns {boolean}
  */
-function isMatrix (matrix) {
-  return isArray(matrix) && baseIsMatrix(matrix)
+function isMatrix(matrix) {
+  return isArray(matrix) && baseIsMatrix(matrix);
 }
 
 module.exports = {
@@ -132,4 +132,4 @@ module.exports = {
   isObject,
   isString,
   isUndefined
-}
+};

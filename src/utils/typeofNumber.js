@@ -1,30 +1,27 @@
-const proto = require('./proto')
+const proto = require("./proto");
 
 // types: Integer, Float, NaN, Infinity, -Infinity
-module.exports = function typeofNumber (value) {
+module.exports = function typeofNumber(value) {
+  const prototype = proto.getPrototype(value);
 
-  const prototype = proto.getPrototype(value)
-
-  if (prototype !== 'Number') {
-    throw new TypeError('Input must be of type Number.')
+  if (prototype !== "Number") {
+    throw new TypeError("Input must be of type Number.");
   }
 
-  let type
+  let type;
   if (Number.isFinite(value)) {
     if (Number.isInteger(value)) {
-      type = 'Integer'
+      type = "Integer";
     } else {
-      type = 'Float'
+      type = "Float";
     }
   } else {
     if (Number.isNaN(value)) {
-      type = Number.NaN.toString()
+      type = Number.NaN.toString();
     } else {
-      type = value > 0
-        ? Number.POSITIVE_INFINITY.toString()
-        : Number.NEGATIVE_INFINITY.toString()
+      type = value > 0 ? Number.POSITIVE_INFINITY.toString() : Number.NEGATIVE_INFINITY.toString();
     }
   }
 
-  return type
-}
+  return type;
+};
