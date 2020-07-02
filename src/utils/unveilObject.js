@@ -1,12 +1,3 @@
-function safeParse (value) {
-  try {
-    return JSON.parse(value.trim())
-  } catch (error) {
-    return value
-  }
-}
-
-
 function unveilObject (value) {
 
   value = value.trim().slice(1, -1).split(',').map(el => el.trim())

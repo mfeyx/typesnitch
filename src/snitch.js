@@ -6,8 +6,8 @@ const { getPrototype } = utils.proto
 /**
  * Reveals the Prototype of an input value
  * @param {*} value Any value to typeof
- * @param {Boolean} detailed If true detailed Prototype for Numbers will be revealed
- * @returns {String}
+ * @param {boolean} detailed If true detailed Prototype for Numbers will be revealed
+ * @returns {string}
  * @example
  * snitch.type(1, true)       // 'Integer'
  * snitch.type(1, false)      // 'Number'
@@ -29,7 +29,6 @@ function type (value, detailed=true) {
   return prototype
 }
 
-
 /**
  * Unveils the actual value for an string input.
  * Works with Integers and Arrays at the moment.
@@ -47,9 +46,24 @@ function unveil (value) {
   return safeParse(value)
 }
 
+/**
+ * Reveals the type of an unveiled value.
+ * Works with Integers and Arrays at the moment.
+ * @param {*} value Any value to unveil
+ * @returns {string}
+ * @example
+ * snitch.unveil('1')           // 1
+ * snitch.unveil('[1, 2, 3]')   // [1, 2, 3]
+ * snitch.unveil('[, 1, 3]')    // '[, 2, 3]'
+ */
+function unveilType (value) {
+  return type(unveil(value))
+}
+
 const snitch = {
   type,
-  unveil
+  unveil,
+  unveilType
 }
 
 module.exports = snitch

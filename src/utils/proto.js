@@ -6,9 +6,8 @@
  * @return {String}
  */
 function getPrototype (obj) {
-  return Object.prototype.toString
-  .call(obj)
-  .slice(8, -1)
+  return Object.prototype.toString.call(obj)
+  // .slice(8, -1)
   // .toLowerCase()
 }
 
@@ -25,6 +24,17 @@ function getConstructorString (obj) {
     .toString()
     .replace(/(\s{.*})|(function )|\(\)/g, '')
     // .toLowerCase()
+}
+
+/**
+ *
+ * @param {*} obj Any Object or Value
+ * @param {String} type
+ */
+function isType(obj, type) {
+  return getPrototype(obj)
+    .toLowerCase()
+    .indexOf(type.toLowerCase()) !== -1
 }
 
 module.exports = {
