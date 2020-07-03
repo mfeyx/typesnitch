@@ -9,11 +9,11 @@ const { getPrototype } = utils.proto
  * @returns {string}
  */
 function type(value, detailed = true) {
-  let prototype = getPrototype(value)
-  if (detailed && prototype === "Number") {
-    prototype = typeofNumber(value)
-  }
-  return prototype
+    let prototype = getPrototype(value)
+    if (detailed && prototype === "Number") {
+        prototype = typeofNumber(value)
+    }
+    return prototype
 }
 
 /**
@@ -23,7 +23,7 @@ function type(value, detailed = true) {
  * @returns {*} parsed Value
  */
 function unveil(value) {
-  return safeParse(value)
+    return safeParse(value)
 }
 
 /**
@@ -33,11 +33,11 @@ function unveil(value) {
  * @returns {string}
  */
 function unveilType(value) {
-  return type(unveil(value))
+    return type(unveil(value))
 }
 
 module.exports = {
-  type,
-  unveil,
-  unveilType
+    type,
+    unveil,
+    unveilType
 }
