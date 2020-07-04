@@ -18,9 +18,9 @@ function getPrototype(obj) {
  */
 function getConstructorString(obj) {
   if (!obj) {
-    return ""
+    return ''
   }
-  return obj.constructor.toString().replace(/(\s{.*})|(function )|\(\)/g, "")
+  return obj.constructor.toString().replace(/(\s{.*})|(function )|\(\)/g, '')
 }
 
 /**

@@ -1,5 +1,5 @@
-const { getPrototype } = require("./proto")
-const { DIGITS } = require("./constants")
+const { getPrototype } = require('./proto')
+const { DIGITS } = require('./constants')
 
 /**
  * Checks if an object is an integer
@@ -9,7 +9,7 @@ const { DIGITS } = require("./constants")
  * @return {boolean} true or false
  */
 function isInteger(obj) {
-  return getPrototype(obj) === "Number" && !obj.toString().includes(".")
+  return getPrototype(obj) === 'Number' && !obj.toString().includes('.')
 }
 
 /**
@@ -20,11 +20,11 @@ function isInteger(obj) {
  * @return {boolean} true or false
  */
 function isIntegerLike(str) {
-  if (getPrototype(str) !== "String") return false
+  if (getPrototype(str) !== 'String') return false
   const obj = str
-    .split("")
+    .split('')
     .filter(c => DIGITS.includes(c))
-    .join("")
+    .join('')
   return obj.length === str.length
 }
 
@@ -36,7 +36,7 @@ function isIntegerLike(str) {
  * @return {boolean} true or false
  */
 function isString(obj) {
-  return getPrototype(obj) === "String"
+  return getPrototype(obj) === 'String'
 }
 
 /**
@@ -47,7 +47,7 @@ function isString(obj) {
  * @return {boolean} true or false
  */
 function isFloat(obj) {
-  return getPrototype(obj) === "Number" && obj.toString().includes(".")
+  return getPrototype(obj) === 'Number' && obj.toString().includes('.')
 }
 
 /**
@@ -58,7 +58,7 @@ function isFloat(obj) {
  * @return {boolean} true or false
  */
 function isObject(obj) {
-  return getPrototype(obj) === "object"
+  return getPrototype(obj) === 'object'
 }
 
 /**
@@ -69,7 +69,7 @@ function isObject(obj) {
  * @return {boolean} true or false
  */
 function isUndefined(obj) {
-  return getPrototype(obj) === "Undefined"
+  return getPrototype(obj) === 'Undefined'
 }
 
 /**
@@ -80,7 +80,7 @@ function isUndefined(obj) {
  * @return {boolean} true or false
  */
 function isNull(obj) {
-  return getPrototype(obj) === "Null"
+  return getPrototype(obj) === 'Null'
 }
 
 /**
@@ -91,7 +91,7 @@ function isNull(obj) {
  * @return {boolean} true or false
  */
 function isArray(obj) {
-  return getPrototype(obj) === "Array"
+  return getPrototype(obj) === 'Array'
 }
 
 /**
@@ -103,7 +103,7 @@ function isArray(obj) {
  */
 function isArrayLike(obj) {
   obj = obj.toString().trim()
-  return obj.startsWith("[") && obj.endsWith("]")
+  return obj.startsWith('[') && obj.endsWith(']')
 }
 
 // helper functions

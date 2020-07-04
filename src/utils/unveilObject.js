@@ -1,4 +1,4 @@
-const { isType } = require("./proto")
+const { isType } = require('./proto')
 
 function unveilObject(value) {
   value = value.trim()
@@ -8,7 +8,7 @@ function unveilObject(value) {
   }
 
   function _isObject(str) {
-    return str.startsWith("{") && str.endsWith("}")
+    return str.startsWith('{') && str.endsWith('}')
   }
 
   function _isflatObject(str) {
@@ -20,14 +20,14 @@ function unveilObject(value) {
   }
 
   function _generateObjString(str) {
-    return str.slice(1, -1).replace(/\s/g, "")
+    return str.slice(1, -1).replace(/\s/g, '')
   }
   function _generateKeyValuePairs(str) {
     return str.split(/(?<=:[\w\d_]),|,(?=[\w\d_]*:)/g)
   }
 
   // validate the input
-  if (isType(value, "string") && _isValidObject(value)) {
+  if (isType(value, 'string') && _isValidObject(value)) {
     // remove the curly braces and whitespace
     const objString = _generateObjString(value)
     // split the string into an array with 'key:value' strings
@@ -35,7 +35,7 @@ function unveilObject(value) {
     // now generate the real object
     const obj = {}
     for (const pair of keyValuePairs) {
-      const [key, val] = pair.split(":")
+      const [key, val] = pair.split(':')
       obj[key] = val
     }
     value = obj

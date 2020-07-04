@@ -1,4 +1,4 @@
-const utils = require("../utils")
+const utils = require('../utils')
 const { typeofNumber, safeParse } = utils
 const { getPrototype } = utils.proto
 
@@ -10,7 +10,7 @@ const { getPrototype } = utils.proto
  */
 function type(value, detailed = true) {
   let prototype = getPrototype(value)
-  if (detailed && prototype === "Number") {
+  if (detailed && prototype === 'Number') {
     prototype = typeofNumber(value)
   }
   return prototype
