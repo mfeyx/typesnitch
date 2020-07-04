@@ -6,10 +6,10 @@ const unveilObject = require("./unveilObject")
 const safeParse = require("./safeParse")
 
 module.exports = {
-    constants,
-    identity,
-    proto,
-    safeParse,
-    typeofNumber,
-    unveilObject
+  constants,
+  identity,
+  proto,
+  safeParse,
+  typeofNumber,
+  unveilObject
 }

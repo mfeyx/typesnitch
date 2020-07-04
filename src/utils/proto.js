@@ -6,7 +6,7 @@
  * @return {string}
  */
 function getPrototype(obj) {
-    return Object.prototype.toString.call(obj).slice(8, -1)
+  return Object.prototype.toString.call(obj).slice(8, -1)
 }
 
 /**
@@ -17,10 +17,10 @@ function getPrototype(obj) {
  * @return {String}
  */
 function getConstructorString(obj) {
-    if (!obj) {
-        return ""
-    }
-    return obj.constructor.toString().replace(/(\s{.*})|(function )|\(\)/g, "")
+  if (!obj) {
+    return ""
+  }
+  return obj.constructor.toString().replace(/(\s{.*})|(function )|\(\)/g, "")
 }
 
 /**
@@ -30,11 +30,11 @@ function getConstructorString(obj) {
  * @return {boolean}
  */
 function isType(obj, type) {
-    return getPrototype(obj).toLowerCase().indexOf(type.toLowerCase()) !== -1
+  return getPrototype(obj).toLowerCase().indexOf(type.toLowerCase()) !== -1
 }
 
 module.exports = {
-    getConstructorString,
-    getPrototype,
-    isType
+  getConstructorString,
+  getPrototype,
+  isType
 }
