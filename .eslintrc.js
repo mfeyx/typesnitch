@@ -1,34 +1,34 @@
 module.exports = {
-  "env": {
-    "commonjs": true,
-    "es2020": true,
-    "node": true
+  'env': {
+    'commonjs': true,
+    'es2020': true,
+    'node': true
   },
-  "plugins": ["jest"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:jest/recommended",
-    "plugin:jest/style"
+  'plugins': ['jest'],
+  'extends': [
+    'eslint:recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style'
   ],
-  "parserOptions": {
-    "ecmaVersion": 11
+  'parserOptions': {
+    'ecmaVersion': 11
   },
-  "rules": {
-    "indent": [
-      "error",
+  'rules': {
+    'indent': [
+      'error',
       2
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    "quotes": [
-      "error",
-      "double"
+    'quotes': [
+      'error',
+      'single'
     ],
-    "semi": [
-      "error",
-      "never"
+    'semi': [
+      'error',
+      'never'
     ]
   }
 }
