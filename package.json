@@ -4,7 +4,8 @@
   "description": "A Simple Type Sniffer for JS",
   "main": "src/snitch.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:silent": "npm test -- --silent --noStackTrace",
     "watch": "jest --watch --verbose",
     "watchall": "jest --watchAll",
