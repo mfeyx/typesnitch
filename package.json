@@ -13,7 +13,7 @@
     "lint:fix": "npx eslint . --ext .js --fix",
     "clear": "rimraf dist",
     "build": "node build.js",
-    "publish": "npm publish dist"
+    "publish": "npm run build && npm publish dist"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
       "pre-push": "npm test && npm run lint:fix"
     }
   }
