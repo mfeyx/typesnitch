@@ -31,13 +31,26 @@ snitch.type(x) // 'String'
 // trying to convert the input with unveil
 const y = snitch.unveil(x)
 snitch.type(y) // 'Array'
-
-const z = '{a: 1, 1: "b"}'
-snitch.unveil(z) // { a: 1, "1": "b" }
 ```
 
+#### Handling Objects
+Using `unveil()` at `objects` is tricky, and will improve in the future. Here is what you can do at the moment:
+```js
+const z = '{a: 1, 1: "b"}'
+snitch.unveil(z) // { a: 1, "1": "b" }
 
-You can use `typesnitch` for type checking:
+// you can do this
+snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3]')
+// returns: { '1': 'b', a: 1, c: [ 1, 2, 3 ] }
+
+// but, you can't do this at the moment
+snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3], d: {e: 1, f: 2}')
+// returns: '{a: 1, 1: "b", c: [1, 2, 3], d: {e: 1, f: 2}'
+```
+
+#### Type Checking
+
+You can use `typesnitch` for type checking like so:
 
 ```js
 const { type, unveil, unveilType, isType } = require('typesnitch')
