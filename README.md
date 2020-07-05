@@ -40,11 +40,11 @@ const z = '{a: 1, 1: "b"}'
 snitch.unveil(z) // { a: 1, "1": "b" }
 
 // you can do this
-snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3]')
+snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3]}')
 // returns: { '1': 'b', a: 1, c: [ 1, 2, 3 ] }
 
 // but, you can't do this at the moment
-snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3], d: {e: 1, f: 2}')
+snitch.unveil('{a: 1, 1: "b", c: [1, 2, 3], d: {e: 1, f: 2}}')
 // returns: '{a: 1, 1: "b", c: [1, 2, 3], d: {e: 1, f: 2}'
 ```
 
