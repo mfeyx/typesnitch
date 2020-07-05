@@ -1,0 +1,27 @@
+{
+  "name": "typesnitch",
+  "version": "VERSION",
+  "description": "A Simple Type Sniffer for JS",
+  "main": "src/snitch.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfeyx/typesnitch.git"
+  },
+  "homepage": "https://typesnitch.dev",
+  "keywords": [
+    "types",
+    "type sniffer",
+    "type detector",
+    "type detection",
+    "type checking",
+    "type snitch",
+    "check types",
+    "type checker",
+    "type check"
+  ],
+  "author": "Markus Feiks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfeyx/typesnitch/issues"
+  }
+}
