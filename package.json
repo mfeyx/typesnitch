@@ -44,7 +44,8 @@
     "jest": "^26.1.0",
     "kind-of": "^6.0.3",
     "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "timeit-js": "0.0.10"
   },
   "husky": {
     "hooks": {

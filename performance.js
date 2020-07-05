@@ -1,21 +1,22 @@
-const Benchmark = require('benchmark')
-const snitch = require('typesnitch')
+const timeit = require('timeit-js')
+const benchmark = require('benchmark')
+
+const snitch = require('./src/snitch')
 const kindof = require('kind-of')
 
-const suite = new Benchmark.Suite
+const x = false
+const options = { e: 10000000, r: 10, d: 10 }
 
-// add tests
+timeit(kindof, x, options)
+console.log('\n')
+
+timeit(snitch.type, x, options)
+console.log('\n')
+
+const suite = new benchmark.Suite
 suite
-  .add('kindof >= str', () => kindof('Hello World') )
-  .add('kindof >= array', () => kindof([1, 2, 3]) )
-  .add('snitch >= str', () => snitch.type('Hello World') )
-  .add('snitch >= array', () => snitch.type([1, 2, 3]) )
-  // add listeners
-  .on('cycle', function (event) {
-    console.log(String(event.target))
-  })
-  .on('complete', function () {
-    console.log('Fastest is ' + this.filter('fastest').map('name'))
-  })
-  // run async
-  .run({ 'async': true })
+  .add('snitch => str', () => snitch.type(x) )
+  .add('kindof => str', () => kindof(x))
+  .on('cycle', function (event) { console.log(String(event.target)) })
+  .on('complete', function () { console.log('Fastest is ' + this.filter('fastest').map('name')) })
+  .run({ 'async': false })
