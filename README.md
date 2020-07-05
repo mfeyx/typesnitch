@@ -33,8 +33,7 @@ const y = snitch.unveil(x)
 snitch.type(y) // 'Array'
 
 const z = '{a: 1, 1: "b"}'
-snitch.unveil(z)
-// { a: 1, "1": "b" }
+snitch.unveil(z) // { a: 1, "1": "b" }
 ```
 
 
