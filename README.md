@@ -6,8 +6,6 @@ If you find any bugs or have suggestions feel free to help and fork the package.
 
 ## Methods
 
-At the moment `typesnitch` has two main methods:
-
 * `type` : Returns the prototype of the value
 * `unveil` : Tries to convert the value, or 'unveil' it, e.g., numbers in disguise :-)
 * `unveilType` : combination of `type` and `unveil`
