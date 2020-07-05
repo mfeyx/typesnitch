@@ -15,7 +15,7 @@ Have a look at the tests for more usage information.
 
 You can use `type()` to get the `prototype` of a given input value. The method has a second parameter that can be used to get a more detailed prototype. The `detailed` parameter is set to `true` per default.
 
-With `unveil()` a type conversion will be tried. At the moment it only works with integers and flat arrays that include number or string values. This will, hopefully, change in the future.
+With `unveil()` a type conversion will be tried. At the moment it only works with integers, strings, objects and flat arrays that include number or string values. This will, hopefully, change in the future.
 
 ## How To Use
 
@@ -31,6 +31,10 @@ snitch.type(x) // 'String'
 // trying to convert the input with unveil
 const y = snitch.unveil(x)
 snitch.type(y) // 'Array'
+
+const z = '{a: 1, 1: "b"}'
+snitch.unveil(z)
+// { a: 1, "1": "b" }
 ```
 
 
