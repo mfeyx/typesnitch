@@ -18,6 +18,20 @@ describe('Testing Snitch API', () => {
   test('snitch.unveil should be a Function', () => {
     expect(typeof snitch.unveil).toEqual(typeof Function)
   })
+  test('snitch should have isType method', () => {
+    expect(snitch.isType).toBeDefined()
+    expect(snitch.isType).not.toBeNull()
+  })
+  test('snitch.isType should be a Function', () => {
+    expect(typeof snitch.isType).toEqual(typeof Function)
+  })
+  test('snitch should have unveilType method', () => {
+    expect(snitch.unveilType).toBeDefined()
+    expect(snitch.unveilType).not.toBeNull()
+  })
+  test('snitch.unveilType should be a Function', () => {
+    expect(typeof snitch.unveilType).toEqual(typeof Function)
+  })
 })
 
 describe('snitch.type()', () => {
@@ -73,7 +87,6 @@ describe('snitch.unveil()', () => {
     expect(snitch.unveil('1.1')).toBe(1.1)
   })
   test('"{a: 1}" to become {a: 1}', () => {
-    console.log(snitch.unveil('{a: 1}'))
     expect(snitch.unveil('{ a: 1 }')).toEqual({ a: 1 })
   })
 })
