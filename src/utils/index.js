@@ -47,7 +47,11 @@ function unveilObject (value) {
   }
   /** @private */
   function _isValidObject (str) {
-    return _isObject(str) && _isflatObject(str) && _hasSameLength(str)
+    return (
+      _isObject(str)
+      && _isflatObject(str)
+      && _hasSameLength(str)
+    )
   }
   /** @private */
   function _generateObjString (str) {
