@@ -23,4 +23,4 @@ shell.exec(`sed -i -- 's/VERSION/${pkg.version}/g' dist/package.json`)
 shell.exec('rm dist/package.json--')
 
 console.log('Publish package to npm...')
-// shell.exec('npm publish dist --dry-run')
+shell.exec('npm publish dist')
