@@ -1,6 +1,6 @@
 {
   "name": "typesnitch",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Simple Type Sniffer for JS",
   "main": "src/snitch.js",
   "scripts": {
