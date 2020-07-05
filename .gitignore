@@ -2,6 +2,9 @@
 .vscode
 *.code-workspace
 
+# folders
+__dev__
+
 # Logs
 logs
 *.log

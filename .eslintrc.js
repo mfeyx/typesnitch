@@ -18,6 +18,11 @@ module.exports = {
       'error',
       2
     ],
+    'space-before-function-paren': ['error', {
+      'anonymous': 'always',
+      'named': 'always',
+      'asyncArrow': 'always'
+    }],
     'linebreak-style': [
       'error',
       'unix'
