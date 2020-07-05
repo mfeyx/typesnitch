@@ -11,9 +11,8 @@
     "watchall": "jest --watchAll",
     "lint": "npx eslint . --ext .js",
     "lint:fix": "npx eslint . --ext .js --fix",
-    "build1": "npm test && npm lint && rimraf dist && npm run dist",
     "clear": "rimraf dist",
-    "build": "npm run clear && sh build.sh"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
