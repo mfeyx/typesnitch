@@ -152,7 +152,9 @@ function typeofNumber (value) {
     if (Number.isNaN(value)) {
       type = Number.NaN.toString()
     } else {
-      type = value > 0 ? Number.POSITIVE_INFINITY.toString() : Number.NEGATIVE_INFINITY.toString()
+      type = value > 0
+        ? Number.POSITIVE_INFINITY.toString()
+        : Number.NEGATIVE_INFINITY.toString()
     }
   }
   return type
