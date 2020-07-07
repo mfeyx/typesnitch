@@ -80,6 +80,10 @@ function isType (obj, type) {
 function unveilObject (value) {
 
   /** @private */
+  function _isString (value) {
+    return typeof value === 'string'
+  }
+  /** @private */
   function _hasSameLength (str) {
     return str.match(/{/g).length === str.match(/}/g).length
   }
@@ -119,7 +123,7 @@ function unveilObject (value) {
 
   value = value.trim()
   // validate the input
-  if (isType(value, 'string') && _isValidObject(value)) {
+  if (_isString(value) && _isValidObject(value)) {
     // remove the curly braces and whitespace
     const objString = _generateObjString(value)
     // split the string into an array with 'key:value' strings
@@ -137,28 +141,43 @@ function unveilObject (value) {
 
 // types: Integer, Float, NaN, Infinity, -Infinity
 function typeofNumber (value) {
-  const prototype = getPrototype(value)
-  if (prototype !== 'Number') {
+  if (typeof value !== 'number') {
     throw new TypeError('Input must be of type Number.')
   }
-  let type
   if (Number.isFinite(value)) {
     if (Number.isInteger(value)) {
-      type = 'Integer'
+      return 'Integer'
     } else {
-      type = 'Float'
+      return 'Float'
     }
   } else {
     if (Number.isNaN(value)) {
-      type = Number.NaN.toString()
+      return 'NaN'
     } else {
-      type = value > 0
-        ? Number.POSITIVE_INFINITY.toString()
-        : Number.NEGATIVE_INFINITY.toString()
+      return value > 0 ? 'Infinity' : '-Infinity'
     }
   }
-  return type
 }
+
+/* eslint-disable */
+/**
+ * @private
+ * @param {number} value Integer or Float
+ */
+function converNumberToString (value) {
+  return `${value}`
+}
+
+/* eslint-disable */
+/**
+ * Checks if the value has a dot
+ * @private
+ * @param {number} value Integer or Float
+ */
+function isFloatNumber (value) {
+  return `${value}`.indexOf('.') !== -1
+}
+
 
 module.exports = {
   getPrototype,

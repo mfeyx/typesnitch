@@ -34,6 +34,9 @@ module.exports = {
     'semi': [
       'error',
       'never'
+    ],
+    'no-prototype-builtins': [
+      'off'
     ]
   }
 }
