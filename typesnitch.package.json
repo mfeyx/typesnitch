@@ -2,7 +2,7 @@
   "name": "typesnitch",
   "version": "VERSION",
   "description": "A Simple Type Sniffer for JS",
-  "main": "snitch.js",
+  "main": "typesnitch.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mfeyx/typesnitch.git"

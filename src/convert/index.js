@@ -22,13 +22,13 @@ function toArray (value, options) {
 }
 
 function toObject (value) {
-  const obj = {}
   if (isObject(value)) return value
+  const obj = {}
+  if (isString(value) || isNumber(value)) return { 0: value }
   if (isArray(value)) {
     value.map((e, i) => obj[i] = e)
     return obj
   }
-  if (isString(value) || isNumber(value)) return { 0: value }
   return obj
 }
 
