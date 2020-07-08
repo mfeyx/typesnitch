@@ -14,7 +14,7 @@ shell.exec('mkdir -p dist')
 
 console.log('Copy files into dist folder...')
 shell.exec('cp -r typesnitch.js dist')
-shell.exec('cp -r src/ dist')
+shell.exec('cp -r src/ dist/src')
 shell.exec('cp LICENSE dist')
 shell.exec('cp README.md dist')
 shell.exec('cp typesnitch.package.json dist/package.json')
