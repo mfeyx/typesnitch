@@ -2,7 +2,7 @@
   "name": "typesnitch",
   "version": "0.1.0",
   "description": "A Simple Type Sniffer for JS",
-  "main": "src/snitch.js",
+  "main": "snitch.js",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",

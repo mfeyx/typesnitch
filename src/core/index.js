@@ -1,4 +1,5 @@
-const { typeofNumber, getPrototype, isType, unveilObject } = require('./utils')
+const { typeofNumber, getPrototype, isType, unveilObject } = require('../utils')
+// const types = require('./types')
 
 /**
  * Reveals the Prototype of an input value

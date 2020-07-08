@@ -1,4 +1,4 @@
-const snitch = require('../src/snitch')
+const snitch = require('../typesnitch')
 
 describe('Testing Snitch API', () => {
   test('snitch should be an object', () => {

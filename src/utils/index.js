@@ -60,10 +60,6 @@ function getPrototype (obj) {
  * @param {*} obj Any Object or Value
  * @param {String} type
  * @return {Boolean} true or false
- * @example
- * const x = 1
- * isType(x, 'number') // true
- * isType(x, 'string') // false
  */
 function isType (obj, type) {
   return getPrototype(obj).toLowerCase().indexOf(type.toLowerCase()) !== -1
@@ -73,9 +69,6 @@ function isType (obj, type) {
  * Convert an object-string into an object. Works only with "flat" objects at the moment.
  * @param {string} value
  * @return {*} A converted object or the original string
- * @example
- * const x = '{a: 123, b: 456, 1: "abc"}'
- * const y = unveilObject(x) // { a: 123, b: 456, "1": "abc" }
  */
 function unveilObject (value) {
 
@@ -139,11 +132,13 @@ function unveilObject (value) {
   return value
 }
 
-// types: Integer, Float, NaN, Infinity, -Infinity
+/** @private */
 function typeofNumber (value) {
+  // types: Integer, Float, NaN, Infinity, -Infinity
   if (typeof value !== 'number') {
     throw new TypeError('Input must be of type Number.')
   }
+
   if (Number.isFinite(value)) {
     if (Number.isInteger(value)) {
       return 'Integer'
