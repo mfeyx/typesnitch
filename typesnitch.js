@@ -7,10 +7,10 @@ const convert = require('./src/convert')
 
 /** TypeSnitch API */
 module.exports = {
-  isType,
   type,
   unveil,
   unveilType,
+  isType,
   detect,
   convert
 }

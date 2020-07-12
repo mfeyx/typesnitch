@@ -154,26 +154,6 @@ function typeofNumber (value) {
   }
 }
 
-/* eslint-disable */
-/**
- * @private
- * @param {number} value Integer or Float
- */
-function converNumberToString (value) {
-  return `${value}`
-}
-
-/* eslint-disable */
-/**
- * Checks if the value has a dot
- * @private
- * @param {number} value Integer or Float
- */
-function isFloatNumber (value) {
-  return `${value}`.indexOf('.') !== -1
-}
-
-
 module.exports = {
   getPrototype,
   typeofNumber,

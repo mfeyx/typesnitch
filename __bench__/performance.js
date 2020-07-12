@@ -41,15 +41,15 @@ const suite = new Suite
 //   .on('complete', function () { console.log('Fastest is ' + this.filter('fastest').map('name')) })
 //   .run({ 'async': false })
 
-const isFloatNumber = num => `${num}`.indexOf('.') !== -1
-const isInteger= num => `${num}`.indexOf('.') === -1
-const isIntegerNumber = num => Number.isInteger(num)
-const isNumber = val => (val === 0 || val === '0') ? true : !Number.isNaN(val / val)
-const convertNumber = val => isNumber(val) ? +val : val
+// const isFloatNumber = num => `${num}`.indexOf('.') !== -1
+// const isInteger= num => `${num}`.indexOf('.') === -1
+// const isIntegerNumber = num => Number.isInteger(num)
+// const isNumber = val => (val === 0 || val === '0') ? true : !Number.isNaN(val / val)
+// const convertNumber = val => isNumber(val) ? +val : val
 
 
-const funcIndexOf = (arr, member) => arr.indexOf(member)
-const arrayIncludes= (arr, member) => arr.includes(member)
+// const funcIndexOf = (arr, member) => arr.indexOf(member)
+// const arrayIncludes= (arr, member) => arr.includes(member)
 
 
 function toString (value) {
@@ -62,11 +62,18 @@ function toString (value) {
   return JSON.stringify(value)
 }
 
-const arr = ['hello', 'world']
-const member = 'a'
+const x = 1.1
 suite
-  .add('toString', () => toString(member))
-  .add('toStringOr', () => toStringOr(member))
+  .add('snitch.convert.toString(value)', () => toString(x))
+  .add('value.toString', () => x.toString())
   .on('cycle', event => console.log(String(event.target)) )
   .on('complete', function () { console.log('Fastest is ' + this.filter('fastest').map('name')) })
   .run({ 'async': false })
+
+
+  /**
+   * Performance Test with benchmark.js
+   * snitch.convert.toString(value) x 843,621,146 ops/sec ±0.42% (92 runs sampled)
+   * value.toString x 50,001,302 ops/sec ±0.57% (92 runs sampled)
+   * Fastest is snitch.convert.toString(value)
+   */
