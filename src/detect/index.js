@@ -10,11 +10,11 @@ const isBuffer = value => typeof value === 'object' && value.constructor.name ==
 const isDate = value => value instanceof Date
 const isError = value => value instanceof Error
 const isRegExp = value => value instanceof RegExp
-const isBaseObject = value => typeof value === 'object' && value.constructor.name === 'Object'
+const isObject = value => typeof value === 'object' && value.constructor.name === 'Object'
 const isBoolean = value => typeof value === 'boolean'
 const isFloat = value => typeof value === 'number' && !Number.isNaN(value) && `${value}`.indexOf('.') !== -1
 const isInteger = value => Number.isInteger(value)
-const isObject = value => typeof value === 'object'
+const isBaseObject = value => typeof value === 'object'
 const isNegInfinity = value => isNumber(value) && !isInteger(value) && !isFloat(value) && !isNaN(value) && value < 0
 const isPosInfinity = value => isNumber(value) && !isInteger(value) && !isFloat(value) && !isNaN(value) && value > 0
 const isFunction = value => typeof value === 'function'

@@ -39,7 +39,7 @@ function type (obj, detailed=true) {
       if (detect.isUint8Array(obj)) return 'Uint8Array'
       if (detect.isUint8ClampedArray(obj)) return 'Uint8ClampedArray'
       if (detect.isBigInt64Array(obj)) return 'BigInt64Array'
-      if (detect.isBaseObject(obj)) return 'Object'
+      if (detect.isObject(obj)) return 'Object'
       break
     default:
       if (t === 'object') return 'Object'
