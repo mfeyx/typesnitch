@@ -9,7 +9,10 @@
  */
 
 const { Suite } = require('benchmark')
+const kindof = require('kind-of')
 const suite = new Suite
+
+const type = require('../src/core/type')
 
 // function getProtoType (val) {
 //   if (val === void 0) return 'Undefined'
@@ -52,23 +55,15 @@ const suite = new Suite
 // const arrayIncludes= (arr, member) => arr.includes(member)
 
 
-function toString (value) {
-  if (value === void 0) return 'undefined'
-  if (value === null) return 'null'
-  if (typeof value === 'string') return value
-  const type = typeof value
-  if (type === 'number') return `${value}`
-  if (type === 'boolean') return `${value}`
-  return JSON.stringify(value)
-}
-
-const x = 1.1
+const x = []
+console.log(kindof(x))
+console.log(type(x))
 suite
-  .add('snitch.convert.toString(value)', () => toString(x))
-  .add('value.toString', () => x.toString())
+  .add('type', () => type(x))
+  .add('kindof()', () => kindof(x))
   .on('cycle', event => console.log(String(event.target)) )
   .on('complete', function () { console.log('Fastest is ' + this.filter('fastest').map('name')) })
-  .run({ 'async': false })
+  .run({ 'async': true })
 
 
   /**

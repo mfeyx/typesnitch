@@ -34,22 +34,6 @@ describe('Testing Snitch API', () => {
   })
 })
 
-describe('snitch.type()', () => {
-  test('1 to be Integer', () => {
-    expect(snitch.type(1)).toBe('Integer')
-  })
-  test('1 and default false to be Number', () => {
-    expect(snitch.type(1, false)).toBe('Number')
-  })
-  test('1.1 to be a Float', () => {
-    expect(snitch.type(1.1)).toBe('Float')
-  })
-  test('"Hello" to be a String', () => {
-    expect(snitch.type('Hello')).toBe('String')
-  })
-  test.todo('other types')
-})
-
 describe('snitch.isType()', () => {
   test('1 is type of "number"', () => {
     expect(snitch.isType(1, 'number')).toBeTruthy()

@@ -1,4 +1,5 @@
-const { typeofNumber, getPrototype, isType, unveilObject } = require('../utils')
+const { isType, unveilObject } = require('../utils')
+const type = require('../core/type')
 // const types = require('./types')
 
 /**
@@ -7,13 +8,13 @@ const { typeofNumber, getPrototype, isType, unveilObject } = require('../utils')
  * @param {boolean} detailed If true detailed Prototype for Numbers will be revealed
  * @returns {string}
  */
-function type (value, detailed=true) {
-  let prototype = getPrototype(value)
-  if (detailed && prototype === 'Number') {
-    prototype = typeofNumber(value)
-  }
-  return prototype
-}
+// function type (value, detailed=true) {
+//   let prototype = getPrototype(value)
+//   if (detailed && prototype === 'Number') {
+//     prototype = typeofNumber(value)
+//   }
+//   return prototype
+// }
 
 /**
  * Unveils the actual value for a string input.
