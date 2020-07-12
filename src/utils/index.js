@@ -56,16 +56,6 @@ function getPrototype (obj) {
 }
 
 /**
- * Check if an object is of a certain type.
- * @param {*} obj Any Object or Value
- * @param {String} type
- * @return {Boolean} true or false
- */
-function isType (obj, type) {
-  return getPrototype(obj).toLowerCase().indexOf(type.toLowerCase()) !== -1
-}
-
-/**
  * Convert an object-string into an object. Works only with "flat" objects at the moment.
  * @param {string} value
  * @return {*} A converted object or the original string
@@ -157,6 +147,5 @@ function typeofNumber (value) {
 module.exports = {
   getPrototype,
   typeofNumber,
-  isType,
   unveilObject
 }

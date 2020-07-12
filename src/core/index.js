@@ -1,20 +1,5 @@
-const { isType, unveilObject } = require('../utils')
+const { unveilObject } = require('../utils')
 const type = require('../core/type')
-// const types = require('./types')
-
-/**
- * Reveals the Prototype of an input value
- * @param {*} value Any value to typeof
- * @param {boolean} detailed If true detailed Prototype for Numbers will be revealed
- * @returns {string}
- */
-// function type (value, detailed=true) {
-//   let prototype = getPrototype(value)
-//   if (detailed && prototype === 'Number') {
-//     prototype = typeofNumber(value)
-//   }
-//   return prototype
-// }
 
 /**
  * Unveils the actual value for a string input.
@@ -30,6 +15,17 @@ function unveil (value) {
   } catch (error) {
     return unveilObject(value)
   }
+}
+
+/**
+ * Check if an object is of a certain type.
+ * @param {*} obj Any Object or Value
+ * @param {String} typestring – whch type to expect
+ * @param {Boolean} detailed – use detailed type sniffing or not
+ * @return {Boolean} true or false
+ */
+function isType (obj, typestring, detailed=true) {
+  return type(obj, detailed).toLowerCase().indexOf(typestring.toLowerCase()) !== -1
 }
 
 /**

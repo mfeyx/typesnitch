@@ -1,4 +1,3 @@
-// const types = require('./types')
 const detect = require('../detect')
 
 /**

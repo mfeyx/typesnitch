@@ -36,7 +36,8 @@ describe('Testing Snitch API', () => {
 
 describe('snitch.isType()', () => {
   test('1 is type of "number"', () => {
-    expect(snitch.isType(1, 'number')).toBeTruthy()
+    expect(snitch.isType(1, 'number', false)).toBeTruthy()
+    expect(snitch.isType(1, 'number', true)).toBeFalsy()
     expect(snitch.isType(1, 'array')).toBeFalsy()
     expect(snitch.isType(1, 'object')).toBeFalsy()
     expect(snitch.isType(1, 'function')).toBeFalsy()

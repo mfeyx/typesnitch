@@ -1,4 +1,3 @@
-/* eslint-disable */
 const { isNumber, isArray, isObject, isString } = require('../detect')
 
 function toString (value) {
